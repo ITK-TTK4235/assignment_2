@@ -1,0 +1,43 @@
+
+
+
+
+
+
+\section{Oppgave (100 \%) - Grunnleggende Git}\label{sec:2-oppgave}
+
+For å få godkjent øvingen, skal dere vise at dere har skjønt det meste av walkthroughen. Dere skal derfor vise hva dere har gjort til en studass og besvare noen spørsmål fra studassen på sal, før dere får øvingen godkjent.
+
+
+
+% \subsection*{Frivillig: \texttt{git rebase}}
+
+% Som dere så, gjorde \verb|git merge| akkurat det vi ville - vi fikk slått sammen kodebasene, og samlet den oppdaterte koden inn i en ny \textit{commit}. Allikevel vil \verb|git| huske på splitten vi hadde. Altså, vil \verb|git| skrive dette i historieboka:
+
+% \begin{itemize}
+%     \item Var enige ved "classic code example".
+%     \item Divergerte i to grener en stund.
+%     \item Slo sammen grenene.
+%     \item Lagde ny \textit{commit} "merged work".
+% \end{itemize}
+
+% \subsection*{Gjemt historie}
+
+% Om dere gjorde den frivillige oppgaven, kall først \verb|git checkout master|, også \verb|git reset --hard e3192ad|, slik at historikken ser slik ut igjen:
+
+% \texttt{* e3192ad (HEAD -> master) merged work}\newline
+% \texttt{|\textbackslash}\newline
+% \texttt{| * 57b9e8c (other) greet mars as well}\newline
+% \texttt{* | af4c17f assert truth}\newline
+% \texttt{|/}\newline
+% \texttt{* f330827 classic example code}\newline
+% \texttt{* 1c9576f added main.c}\newline
+
+% Dette illustrer en veldig nyttig egenskap ved \verb|git|; ingen ferdige \textit{commits} slettes helt før de samles inn av \verb|git| sin søppelhåndterer - som tar 90 dager, så lenge standardverdien ikke endres. En \textit{commit} vil slettes når denne perioden er utløpt hvis det ikke er noen grener som inkluderer denne \textit{commiten}.
+
+% Noe som er nyttig å vite, er at selv om \verb|git| ikke har slettet en commit, vil den ikke vises via \verb|git lg|. Dette er fordi \textit{commits} uten en gren blir regnet som "dangling", og \verb|git| vil i utgangspunktet ikke vise disse. For å alle \textit{dangling commits} kan man kalle \verb|git fsck --lost-found|, eller \verb|git reflog| for å se alt man har gjort i det siste.
+
+% \subsection*{\texttt{git remote, git push, git fetch}}
+
+% \subsection*{\texttt{.gitignore}}
+
