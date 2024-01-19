@@ -25,9 +25,9 @@ I denne øvingen får dere ikke utlevert noen \verb|.c| eller \verb|.h|-filer.
 
 
 \section{Introduksjon - Praktisk rundt øvingen}
-Versjonskontroll er en måte å ta \textit{bilder} av en fil, slik at man kan se hvordan filen har endret seg, og når endringene ble gjort. Programmet \verb|git| er et utbredt verktøy for versjonskontroll. Versjonskontroll er spesielt viktig når man jobber flere i lag på de samme filene.
+Versjonskontroll er en måte å ta \textit{bilder} av en fil på, slik at man kan se hvordan filen har endret seg, og når endringene ble gjort. Programmet \verb|git| er et utbredt verktøy for versjonskontroll. Versjonskontroll er spesielt viktig når man jobber flere i lag på de samme filene. \verb|git| ble opprinnelig utviklet av Linus Torvalds i 2005 for å gjøre det lettere for flere programvareutviklere å samarbeide på Linux-kjernen samtidig. 
 
-Denne øvingen er ment som en introduksjon til praktisk bruk av \verb|git|. For å illustrere de mest brukte delene av \verb|git| vil øvingen være strukturert som en walkthrough og består av å skrive enkel \verb|C|-kode, som skal versjonskontrolleres (introduksjon \ref{sec:innføring}). Oppgaven finner dere i seksjon \ref{sec:2-oppgave} og handler om at dere skal vise at dere mestrer \verb|git| til en studass for å få godkjent øvingen.
+ Denne øvingen er ment som en introduksjon til praktisk bruk av \verb|git|. For å illustrere de mest brukte delene av \verb|git| vil øvingen være strukturert som en walkthrough og består av å skrive enkel \verb|C|-kode, som skal versjonskontrolleres (introduksjon \ref{sec:innføring}). Oppgaven finner dere i seksjon \ref{sec:2-oppgave} og handler om at dere skal vise at dere mestrer \verb|git| til en studass for å få godkjent øvingen.
 
 \subsection{Avhengigheter}
 
@@ -43,19 +43,19 @@ I tillegg til \verb|git|, trenger man en \verb|C|-kompilator og tekstbehandler f
 Åpne en terminal og skriv inn \verb|git --version|. Dette er en enkel test for å sjekke om \verb|git| er riktig installert og ligger i \verb|PATH|-variabelen til operativsystemet.
 
 
-Før \verb|git| kan brukes må man gjøre noen enkle konfigurasjoner. Først og fremst må \verb|git| har litt informasjon om brukeren. Dette må bare gjøres en gang, og består av to kommandoer:
+Før \verb|git| kan brukes må man gjøre noen enkle konfigurasjoner. Først og fremst må \verb|git| ha litt informasjon om brukeren. Dette må bare gjøres en gang, og består av to kommandoer:
 
 \begin{lstlisting}[mathescape=true]
-student@Ubuntu:$\smallsim$$\verb|$|$ git config --global user.name "Kiet Tuan Hoang"
-student@Ubuntu:$\smallsim$$\verb|$|$ git config --global user.email "kietth@stud.ntnu.no"
+student@Ubuntu:$\smallsim$$\verb|$|$ git config --global user.name "Linus Torvalds"
+student@Ubuntu:$\smallsim$$\verb|$|$ git config --global user.email "linux@stud.ntnu.no"
 \end{lstlisting}
 
 
-Flagget \verb|--global| fører til at \verb|git| lagrer navn og email i filen \texttt{$\smallsim$/.gitconfig}. Om man jobber på en datamaskin andre bruker - slik som i heisprosjektet, er det lurt å konfigurere \verb|git| lokalt. Det gjøres fra et allerede opprettet \verb|git|-repository, ved å kalle de samme kommandoene uten \verb|--global|-flagget:
+Flagget \verb|--global| fører til at \verb|git| lagrer navn og email i filen \texttt{$\smallsim$/.gitconfig}. Om man jobber på en datamaskin andre bruker - slik som i heisprosjektet, er det lurt å konfigurere \verb|git| lokalt \footnote{Dette er spesielt viktig når man bruker tjenester for å lagre repositories på nett, f.eks. \href{https://github.com/about}{Github}.} (\textbf{VIKTIG!}). Det gjøres fra et allerede opprettet \verb|git|-repository, ved å kalle de samme kommandoene uten \verb|--global|-flagget inne i mappen til \verb|git|-repositoriet:
 
 \begin{lstlisting}[mathescape=true]
-student@Ubuntu:$\smallsim$$\verb|$|$ git config user.name "Kiet Tuan Hoang"
-student@Ubuntu:$\smallsim$$\verb|$|$ git config user.email "kietth@stud.ntnu.no"
+student@Ubuntu:$\smallsim$$\verb|$|$ git config user.name "Linus Torvalds"
+student@Ubuntu:$\smallsim$$\verb|$|$ git config user.email "linux@stud.ntnu.no"
 \end{lstlisting}
 
 For ekstra brukervennlighet, har \verb|git| muligheten til å definere aliaser for lange kommandoer som ofte brukes. For eksempel brukes kommandoen \verb|git checkout| ofte slik at mange liker å aliase denne til \verb|git co|. For denne øvingen definerer man aliaset \verb|lg| (betyr det samme som \verb|git log --all --oneline| \verb|--graph --decorate|):
@@ -81,7 +81,7 @@ student@Ubuntu:$\smallsim$$\verb|$|$ git init
 Initialized empty Git repository in /home/student/demo/.git/
 \end{lstlisting}
 
-\verb|mkdir| (\textit{\textbf{m}ake \textbf{dir}ectory}) vil opprette mappen \verb|demo|, og \verb|cd| (\textit{\textbf{c}hange \textbf{d}irectory}) vil flytte brukeren inn i den. Til slutt vil kommandoen \verb|git init| oprette en gjemt mappe med navn \verb|.git| inne i demo-mappen, som \verb|git| vil bruke for å holde styr på filene i mappen.
+\verb|mkdir| (\textit{\textbf{m}a\textbf{k}e \textbf{dir}ectory}) vil opprette mappen \verb|demo|, og \verb|cd| (\textit{\textbf{c}hange \textbf{d}irectory}) vil flytte brukeren inn i den. Til slutt vil kommandoen \verb|git init| opprette en skjult mappe med navn \verb|.git| inne i demo-mappen, som \verb|git| vil bruke for å holde styr på filene i mappen.
 
 \subsection{\texttt{git status, git add, git commit}}
 
@@ -264,7 +264,7 @@ hvor:
 
 
 
-Til nå har vi vært innom \textbf{PWD}, \textbf{SA}, og \textbf{REP} ved at vi har laget en enkel \verb|C|-kode (\verb|main.c|) som vi har tatt \textit{bilde} av med \verb|git|. Vi kommer ikke til å sette opp eksterne servere, så vi kommer ikke borti \textbf{REM}\footnote{I praksis brukes \href{https://github.com}{https://github.com} som ekstern server.}. For å få mer kunnskap om \verb|git|, skal vi nå bygge videre på den lokale \verb|git|-grafen vår.
+Til nå har vi vært innom \textbf{PWD}, \textbf{SA}, og \textbf{REP} ved at vi har laget en enkel \verb|C|-kode (\verb|main.c|) som vi har tatt \textit{bilde} av med \verb|git|. Vi kommer ikke til å sette opp eksterne servere, så vi kommer ikke borti \textbf{REM}\footnote{I praksis brukes ofte \href{https://github.com}{Github} eller \href{https://gitlab.com}{Gitlab} som ekstern server for lagring av repositories.}. For å få mer kunnskap om \verb|git|, skal vi nå bygge videre på den lokale \verb|git|-grafen vår.
 
 \subsection{\texttt{git diff, git checkout}}
 
