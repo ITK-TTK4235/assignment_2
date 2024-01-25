@@ -51,7 +51,7 @@ student@Ubuntu:$\smallsim$$\verb|$|$ git config --global user.email "linux@stud.
 \end{lstlisting}
 
 
-Flagget \verb|--global| fører til at \verb|git| lagrer navn og email i filen \texttt{$\smallsim$/.gitconfig}. Om man jobber på en datamaskin andre bruker - slik som i heisprosjektet, er det lurt å konfigurere \verb|git| lokalt \footnote{Dette er spesielt viktig når man bruker tjenester for å lagre repositories på nett, f.eks. \href{https://github.com/about}{Github}.} (\textbf{VIKTIG!}). Det gjøres fra et allerede opprettet \verb|git|-repository, ved å kalle de samme kommandoene uten \verb|--global|-flagget inne i mappen til \verb|git|-repositoriet:
+Flagget \verb|--global| fører til at \verb|git| lagrer navn og email i filen \texttt{$\smallsim$/.gitconfig}. Om man jobber på en datamaskin andre bruker - slik som i heisprosjektet, er det lurt å konfigurere \verb|git| lokalt \footnote{Dette er spesielt viktig når man bruker tjenester for å lagre repositories på nett, f.eks. \href{https://github.com/about}{Github}.} (\textbf{VIKTIG!}). Det gjøres fra et allerede opprettet \verb|git|-repository, altså at kommandoen \verb|git init| har blitt brukt i mappen, ved å kalle de samme kommandoene uten \verb|--global|-flagget inne i mappen til \verb|git|-repositoriet:
 
 \begin{lstlisting}[mathescape=true]
 student@Ubuntu:$\smallsim$$\verb|$|$ git config user.name "Linus Torvalds"
@@ -81,7 +81,7 @@ student@Ubuntu:$\smallsim$$\verb|$|$ git init
 Initialized empty Git repository in /home/student/demo/.git/
 \end{lstlisting}
 
-\verb|mkdir| (\textit{\textbf{m}a\textbf{k}e \textbf{dir}ectory}) vil opprette mappen \verb|demo|, og \verb|cd| (\textit{\textbf{c}hange \textbf{d}irectory}) vil flytte brukeren inn i den. Til slutt vil kommandoen \verb|git init| opprette en skjult mappe med navn \verb|.git| inne i demo-mappen, som \verb|git| vil bruke for å holde styr på filene i mappen.
+\verb|mkdir| (\textit{\textbf{m}a\textbf{k}e \textbf{dir}ectory}) vil opprette mappen \verb|demo|, og \verb|cd| (\textit{\textbf{c}hange \textbf{d}irectory}) vil flytte brukeren inn i den. Til slutt vil kommandoen \verb|git init| opprette en skjult mappe med navn \verb|.git| inne i demo-mappen, som \verb|git| vil bruke for å holde styr på filene i mappen. Det er viktig å nevne at \verb|git init| må brukes for å opprette et \textit{git directory} før man kan bruke de fleste kommandoene knyttet til \verb|git|.
 
 \subsection{\texttt{git status, git add, git commit}}
 
