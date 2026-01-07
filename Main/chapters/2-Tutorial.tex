@@ -4,11 +4,11 @@
 
 
 
-\section{Oppgave (100 \%) - Grunnleggende Git}\label{sec:2-oppgave}
+\section{Oppgave (50 \%) - Grunnleggende Git}\label{sec:2-oppgave}
 
 For å få godkjent øvingen, skal dere vise at dere har skjønt det meste av walkthroughen. Dere skal derfor vise hva dere har gjort til en studass og besvare noen spørsmål fra studassen på sal, før dere får øvingen godkjent. Dere oppfordres også til å utforske \verb|git| på egenhånd ved å bruke \verb|git help| eller \verb|git help tutorial|, ettersom dere kommer til å bruke \verb|git| til heisprosjektet (og videre i arbeidslivet).
 
-\section{Oppgave (anbefalt) - GitHub}
+\section{Oppgave (50 \%) - GitHub}
 Når man bruker \verb|git| i praksis, er det vanlig i kombinasjon med en såkalt kodevertsplattform. GitHub er det mest brukte eksempelet på dette, men det finnes også andre alternativer som Bitbucket, GitLab, m.m. I TTK4235 anbefaler vi bruk av GitHub, og som student ved NTNU får man faktisk tilgang til GitHub Pro.
 Her er det imidlertid verd å merke seg at bruk av GitHub kan medføre at alt du legger ut i repositoryet blir public, dvs. tilgjengelig for alle via f.eks. søk i Google.
 Dette er som regel ikke noe problem når du jobber med øvinger i et emne på NTNU (og definitivt ikke noe problem i TTK4235), men dersom du jobber i eller med en bedrift, eller prosjektet ditt av andre årsaker inkluderer konfidensiell kunnskap eller metodikk, kan det være lurt å tenke seg om to ganger. 
@@ -38,6 +38,8 @@ Nå er vi i stand til å klone \textit{repositoryet} vårt ved å bruke følgend
 Nå kan du for eksempel lage en enkel tekstfil i \textit{repositoryet} via terminalen, og deretter bruke \verb|git add file_name| for å legge til denne filen i \textit{staging area}. Så kan du \textit{comitte} gjennom kommandoen \verb|git commit -m "first commit"|, og deretter \textit{pushe} ved kommandoen \verb|git push|. Du har nå laget et GitHub-\textit{repository}, og gjort en \textit{commit}. Hvis du tar en titt på hovedsiden til ditt \textit{repository} vil du nå se endringene som har blitt gjort. Arbeidsflyten ellers er lik som forklart tidligere i denne øvingen, bortsett fra at \textit{merge} med fordel kan gjøres i nettsiden til selve \textit{repositoryet}.
 
 I dette eksempelet gjorde vi en \textit{commit} rett inn i hovedgrenen \verb|main|. Dette bør man egentlig aldri gjøre, og vi anbefaler å gjøre \textit{commits} i andre grener, og deretter å \textit{merge} i GitHub sin nettleser. Dette er en svært vanlig konvensjon som hovedsaklig går ut på å holde \verb|main| kjørbar. I tillegg vil vi nevne at dere {\bf{ikke}} bør bruke \textit{global credentials} (f.eks. \verb|--global|-flagget i \verb|git| \verb|config|) når dere jobber på offentlige datamaskiner, noe dere vil gjøre i TTK4235. For mer informasjon om \verb|Git| og \verb|Git|-konvensjoner anbefaler vi å ta en titt på boken \href{https://git-scm.com/book/en/v2}{\it Pro Git} skrevet av Scott Chacon, som er tilgjengelig gratis på nett.
+
+For å få denne oppgaven godkjent, vis hva dere har gjort til læringsassistentene.
 
 %\subsection*{Frivillig: \texttt{git rebase}}
 
